@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 public class JsonTest {
 
 	public static void main(String[] args) {
+		System.out.println("Test pull from GIT");
 		Gson gson = new Gson();
 		String json = "{"+
 			"\"name\": \"John\","+
