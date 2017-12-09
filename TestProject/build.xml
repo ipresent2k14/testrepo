@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project default="compress" name="HelloWorld">
+
+	<target name="init">
+		<mkdir dir="build/classes"/>
+		<mkdir dir="dist"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac destdir="build/classes" srcdir="src"/>
+	</target>
+	
+	<target name="compress" depends="compile">
+		<jar basedir="build/classes" destfile="dist/TestProject.jar"/>
+	</target>
+	
+	<target name="execute" depends="compile">
+		<java classpath="build/classes" classname="com.test.jsontest.*"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build"/>
+		<delete dir="dist"/>
+	</target>
+
+</project>
